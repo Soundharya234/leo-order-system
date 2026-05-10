@@ -54,9 +54,9 @@ export default function Dashboard() {
         
         // Parallel Fetch
         const [summaryRes, ordersRes, salesRes] = await Promise.all([
-            axios.get('http://localhost:5000/api/analytics/dashboard-summary', config),
-            axios.get('http://localhost:5000/api/orders/all', config),
-            axios.get('http://localhost:5000/api/analytics/daily-sales', config)
+            axios.get('https://leo-order-system-1.onrender.com/api/analytics/dashboard-summary', config),
+            axios.get('https://leo-order-system-1.onrender.com/api/orders/all', config),
+            axios.get('https://leo-order-system-1.onrender.com/api/analytics/daily-sales', config)
         ]);
 
         console.log("DASHBOARD LIVE UPDATE:", {

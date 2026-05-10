@@ -18,7 +18,7 @@ const Signup = () => {
     setError('');
 
     try {
-      const { data } = await axios.post('http://localhost:5000/api/auth/signup', {
+      const { data } = await axios.post('https://leo-order-system-1.onrender.com/api/auth/signup', {
         name,
         email,
         password,

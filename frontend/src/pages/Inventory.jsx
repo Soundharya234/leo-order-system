@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Package, Plus, Filter, Edit2, Trash2, X, Check } from 'lucide-react';
 
-const API_URL = "http://localhost:5000/api/products";
+const API_URL = "https://leo-order-system-1.onrender.com/api/products";
 
 export default function Inventory() {
   const [products, setProducts] = useState([]);

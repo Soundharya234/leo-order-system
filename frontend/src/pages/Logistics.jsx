@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Truck, MapPin, Phone, IndianRupee, Plus, X, Package, UserCheck, ShieldCheck } from 'lucide-react';
 
-const API_PROCUREMENT = "http://localhost:5000/api/procurement/loads";
-const API_SUPPLIERS = "http://localhost:5000/api/suppliers";
-const API_DELIVERY = "http://localhost:5000/api/delivery";
+const API_PROCUREMENT = "https://leo-order-system-1.onrender.com/api/procurement/loads";
+const API_SUPPLIERS = "https://leo-order-system-1.onrender.com/api/suppliers";
+const API_DELIVERY = "https://leo-order-system-1.onrender.com/api/delivery";
 
 export default function Logistics() {
   const [suppliers, setSuppliers] = useState([]);
@@ -20,9 +20,9 @@ export default function Logistics() {
   const fetchData = async () => {
     try {
       const [suppRes, delRes, loadsRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/suppliers', config),
-        axios.get('http://localhost:5000/api/delivery', config),
-        axios.get('http://localhost:5000/api/procurement/loads', config)
+        axios.get('https://leo-order-system-1.onrender.com/api/suppliers', config),
+        axios.get('https://leo-order-system-1.onrender.com/api/delivery', config),
+        axios.get('https://leo-order-system-1.onrender.com/api/procurement/loads', config)
       ]);
       setSuppliers(suppRes.data);
       setDeliveryStaff(delRes.data);
@@ -41,7 +41,7 @@ export default function Logistics() {
   const handleLoadSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/procurement/load", loadData, config);
+      await axios.post("https://leo-order-system-1.onrender.com/api/procurement/load", loadData, config);
       setShowLoadForm(false);
       setLoadData({ supplierId: '', riceType: '', quantity: '', rate: '', transportCharge: '', amountPaid: '' });
       fetchData();

@@ -31,8 +31,8 @@ const Customers = () => {
   const fetchData = async () => {
     try {
       const [customersRes, analyticsRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/customers', config),
-        axios.get('http://localhost:5000/api/customers/analytics', config)
+        axios.get('https://leo-order-system-1.onrender.com/api/customers', config),
+        axios.get('https://leo-order-system-1.onrender.com/api/customers/analytics', config)
       ]);
       setCustomers(customersRes.data);
       setAnalytics(analyticsRes.data);
@@ -52,10 +52,10 @@ const Customers = () => {
     e.preventDefault();
     try {
       if (editingId) {
-        await axios.put(`http://localhost:5000/api/customers/${editingId}`, formData, config);
+        await axios.put(`https://leo-order-system-1.onrender.com/api/customers/${editingId}`, formData, config);
         setMessage({ type: 'success', text: 'Customer updated successfully!' });
       } else {
-        await axios.post('http://localhost:5000/api/customers', formData, config);
+        await axios.post('https://leo-order-system-1.onrender.com/api/customers', formData, config);
         setMessage({ type: 'success', text: 'Customer added successfully!' });
       }
       setShowModal(false);
@@ -70,7 +70,7 @@ const Customers = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this customer?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/customers/${id}`, config);
+        await axios.delete(`https://leo-order-system-1.onrender.com/api/customers/${id}`, config);
         setMessage({ type: 'success', text: 'Customer deleted successfully!' });
         fetchData();
       } catch (error) {

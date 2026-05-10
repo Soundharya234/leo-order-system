@@ -23,8 +23,8 @@ export default function Analytics() {
         const config = { headers: { Authorization: `Bearer ${userInfo?.token}` } };
         
         const [summaryRes, trendsRes] = await Promise.all([
-          axios.get('http://localhost:5000/api/analytics/summary', config),
-          axios.get('http://localhost:5000/api/analytics/trends', config)
+          axios.get('https://leo-order-system-1.onrender.com/api/analytics/summary', config),
+          axios.get('https://leo-order-system-1.onrender.com/api/analytics/trends', config)
         ]);
 
         setSummary(summaryRes.data);

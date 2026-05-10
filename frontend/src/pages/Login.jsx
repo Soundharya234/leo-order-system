@@ -18,11 +18,11 @@ const Login = () => {
     setError('');
 
     try {
-      let endpoint = 'http://localhost:5000/api/auth/login';
+      let endpoint = 'https://leo-order-system-1.onrender.com/api/auth/login';
       let payload = { identifier, password };
 
       if (loginType === 'customer') {
-        endpoint = 'http://localhost:5000/api/customer/login';
+        endpoint = 'https://leo-order-system-1.onrender.com/api/customer/login';
         payload = { phone };
       }
 

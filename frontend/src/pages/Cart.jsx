@@ -47,7 +47,7 @@ export default function Cart() {
       };
 
       console.log("Sending Order Payload:", orderPayload);
-      const response = await axios.post("http://localhost:5000/api/orders", orderPayload, config);
+      const response = await axios.post("https://leo-order-system-1.onrender.com/api/orders", orderPayload, config);
       console.log("Order Response:", response.data);
       
       alert(`Order placed successfully! 🎉\n${paymentMethod === 'GPay' ? 'Please complete payment to 8667897907' : ''}`);

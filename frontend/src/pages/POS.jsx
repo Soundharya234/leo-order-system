@@ -3,9 +3,9 @@ import axios from 'axios';
 import { Trash2, ShoppingBag, CreditCard, Search, User, Receipt, Wallet, Banknote } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
-const API_PRODUCTS = "http://localhost:5000/api/products";
-const API_CUSTOMERS = "http://localhost:5000/api/customers";
-const API_ORDERS = "http://localhost:5000/api/orders";
+const API_PRODUCTS = "https://leo-order-system-1.onrender.com/api/products";
+const API_CUSTOMERS = "https://leo-order-system-1.onrender.com/api/customers";
+const API_ORDERS = "https://leo-order-system-1.onrender.com/api/orders";
 
 export default function POS() {
   const { cart, addToCart, removeFromCart, updateQty, clearCart, totalPrice } = useCart();

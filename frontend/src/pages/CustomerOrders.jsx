@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Package, Clock, Receipt, Banknote, Calendar } from 'lucide-react';
 
-const API_ORDERS = "http://localhost:5000/api/orders";
+const API_ORDERS = "https://leo-order-system-1.onrender.com/api/orders";
 
 export default function CustomerOrders() {
   const [orders, setOrders] = useState([]);

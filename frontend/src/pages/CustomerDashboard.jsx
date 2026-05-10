@@ -23,8 +23,8 @@ const CustomerDashboard = () => {
   const fetchData = async () => {
     try {
       const [profileRes, stockRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/customer/profile', config),
-        axios.get('http://localhost:5000/api/customer/stock', config)
+        axios.get('https://leo-order-system-1.onrender.com/api/customer/profile', config),
+        axios.get('https://leo-order-system-1.onrender.com/api/customer/stock', config)
       ]);
       setProfile(profileRes.data);
       setProducts(stockRes.data);
@@ -51,7 +51,7 @@ const CustomerDashboard = () => {
     if (!amount || isNaN(amount) || amount <= 0) return;
 
     try {
-      const { data } = await axios.put(`http://localhost:5000/api/customers/${userInfo._id}/payment`, { amountPaid: Number(amount) }, config);
+      const { data } = await axios.put(`https://leo-order-system-1.onrender.com/api/customers/${userInfo._id}/payment`, { amountPaid: Number(amount) }, config);
       setMessage({ type: 'success', text: `Payment of ₹${amount} successful! New Balance: ₹${data.newBalance}` });
       fetchData(); // Refresh UI
     } catch (error) {

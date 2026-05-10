@@ -17,7 +17,7 @@ function Sidebar() {
     const fetchNotifications = async () => {
       try {
         const config = { headers: { Authorization: `Bearer ${userInfo?.token}` } };
-        const { data } = await axios.get('http://localhost:5000/api/notifications', config);
+        const { data } = await axios.get('https://leo-order-system-1.onrender.com/api/notifications', config);
         setNotifications(data);
       } catch (err) {
         console.error("Failed to fetch notifications");
